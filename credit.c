@@ -3,6 +3,7 @@
 
 int main(void)
 {
+    // getting the card number from the user
     long long card = get_long_long("Number: ");
     int digit;
 
@@ -23,9 +24,10 @@ int main(void)
 
     // vaue of counts for the two arrays of digits
     int count1, count2;
+    
     if(count % 2 == 0)
     {
-        count1 = count2 = count / 2;
+        count1 = count2 = count / 2; // if the number of digits are even then both the arrays will have same number of digits
     }
     else
     {
@@ -42,9 +44,7 @@ int main(void)
     {
         num1[i] = card_num % 10;
         card_num /= 100;
-        // printf("%i  ", num1[i]);
     }
-    // printf("\n");
 
     // removing the last digit from the card
     card_num1 /= 10;
@@ -54,10 +54,9 @@ int main(void)
     {
         num2[i] = card_num1 % 10;
         card_num1 /= 100;
-        // printf("%i  ", num2[i]);
     }
-    // printf("\n");
 
+    // this array is created so that we can use the other condition that is applicable on num2 array but don't actually change it
     int num3[count2];
 
     for(int i = 0; i < count2; i++)
@@ -69,10 +68,8 @@ int main(void)
     for(int i=0; i<count2; i++)
     {
         num3[i] *= 2;
-        // printf("%i  ", num3[i]);
     }
-    // printf("\n");
-
+    
     // the two sums
     int sum1 = 0;
     int sum2 = 0;
@@ -82,7 +79,6 @@ int main(void)
     {
         sum1 += num1[i];
     }
-    // printf("%i\n", sum1);
 
     for(int i = 0; i < count2; i++)
     {
@@ -96,7 +92,6 @@ int main(void)
         }
 
     }
-    // printf("%i\n", sum2);
 
     // calculating the final sum
     int sum = sum1 + sum2;
